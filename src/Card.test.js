@@ -6,7 +6,7 @@ import TEST_IMAGES from "./_testCommon.js";
 
 const IMAGE_ONE = TEST_IMAGES[0];
 
-
+//smoke test
 it("renders without crashing", function () {
   render(<Card 
     caption={IMAGE_ONE.caption} 

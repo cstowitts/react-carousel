@@ -34,26 +34,32 @@ import Card from "./Card";
     <div className="Carousel">
       <h1>{title}</h1>
       <div className="Carousel-main">
-        <i
-          className="fas fa-chevron-circle-left fa-2x"
+        {currCardIdx !== 0 && <i
+          className="Carousel-left-arrow fas fa-chevron-circle-left fa-2x"
           onClick={goBackward}
-        />
+        />}
         <Card
           caption={currCard.caption}
           src={currCard.src}
           currNum={currCardIdx + 1}
           totalNum={total}
         />
-        <i
-          className="fas fa-chevron-circle-right fa-2x"
+        {currCardIdx !== 2 && <i
+          className="Carousel-right-arrow fas fa-chevron-circle-right fa-2x"
           onClick={goForward}
-        />
+        />}
       </div>
     </div>
   );
 }
 
-//clicking the right btn (goForward) when on the last img of the carousel increments the idx but then everything is undefined bc that element doesn't exist
-//TODO: FIX THAT SHIT
+//TODO: WHY LINE 37 EVALS TO ELS?
+//w/e is left of && is eval first 
+  //if that evals to falsey
+    //left of && is determinant 
+  //if truthy, then move on to the right of the &&
+    //right side of && is determinant
+
+
 
 export default Carousel;
