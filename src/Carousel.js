@@ -25,7 +25,10 @@ import Card from "./Card";
     setCurrCardIdx(currCardIdx + 1);
   }
 
-  //TODO: create goBackward() fn and update line 36
+  //decrements currCardIdx state by 1
+  function goBackward() {
+    setCurrCardIdx(currCardIdx - 1);
+  }
 
   return (
     <div className="Carousel">
@@ -33,7 +36,7 @@ import Card from "./Card";
       <div className="Carousel-main">
         <i
           className="fas fa-chevron-circle-left fa-2x"
-          onClick={goForward}
+          onClick={goBackward}
         />
         <Card
           caption={currCard.caption}
